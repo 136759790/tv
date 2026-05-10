@@ -47,6 +47,8 @@ class Videos extends Table {
   IntColumn get fileSize => integer().nullable()();
 }
 
+final AppDatabase db = AppDatabase();
+
 @DriftDatabase(tables: [StorageSources, Folders, Videos])
 class AppDatabase extends _$AppDatabase {
   AppDatabase() : super(_openConnection());
